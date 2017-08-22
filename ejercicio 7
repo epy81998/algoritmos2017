@@ -1,0 +1,29 @@
+_getch();
+}
+
+
+
+
+void Solucion1(float O, float P, float Q, float &M, float &N)
+{if (O==0)
+{M=(-P)/(2*O);
+cout<<"Solucion Unica";
+cout<<"\n el valor M es igual a: "<< M;}
+else
+{if(pow(P,2)>(4*O*Q))
+{
+M=(-P)+sqrt(pow(P,2)-(4*O*Q))/(2*O);
+N=(-P)-sqrt(pow(P,2)-(4*O*Q))/(2*O);
+cout<<"Solucion real";
+cout<<"\n X1="<<M;
+cout<<"\n X2="<<N;}
+else
+{M=(-P)/(2*O);
+N=(-P)-sqrt(pow(P,2)-(4*O*Q*-1))/(2*O);
+cout<<"Solucion imaginaria";
+cout<<"\n X1"<<M<<"+"<<N;
+cout<<"\n X2"<<M<<"-"<<N;
+}
+}
+}
+
