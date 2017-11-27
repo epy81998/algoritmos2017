@@ -1,0 +1,26 @@
+void altausuario()
+{
+int ci;
+ do{alias=fopen("usuario.sec","ab");
+ cout<<"Ingrese el numero de su carnet:";
+ cin>>ci;
+ }while(verificarCarnet(ci)==true);
+ cout<<"\nEscribir el nombre:";
+ cin.ignore();
+ gets(usuario.nombre);
+ cout<<"\nIngrese el correo:";
+ gets(usuario.correo);
+ cout<<endl;
+ cout<<"Ingrese su telefono:";
+ cin>>usuario.tel;
+ usuario.CI=ci;
+ usuario.estado=9;
+ alias=fopen("usuario.sec","ab");
+fwrite(&usuario,sizeof(usuario),1, alias);
+system("cls");
+cout<<"USUARIO REGISTRADO!!!!"<<endl;
+cout<<"<<<<OPRIMA CUALQUIER TECLA PARA CONTINUAR>>>>";
+getch();
+fclose(alias);
+system("cls");
+ }
