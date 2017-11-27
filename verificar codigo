@@ -1,0 +1,20 @@
+bool verificarcodigo(int C){
+bool k=false;
+alias=fopen("restaurante.sec","rb");
+if(alias!=NULL){
+fread(&restaurante,sizeof(restaurante),1, alias);
+while(!feof(alias))
+{
+	if(restaurante.codigo==C){
+	   k=true;
+	   cout<<"\nel codigo ya existe";
+	   system("cls");
+	}
+    fread(&restaurante,sizeof(restaurante),1, alias);
+}
+fclose(alias);
+}else{
+cout<<"\nel archivo no existe";
+}
+return(k);
+}
