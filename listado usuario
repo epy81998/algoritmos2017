@@ -1,0 +1,31 @@
+void listadousuario()
+ {   system("cls"); 
+   cout << "\n\rLISTADO DE USUARIOS";
+   alias=fopen("usuario.sec","rb"); // Intenta abrir el archivo PROYECTO.SEC
+   // en modo de solo lectura   
+   if(alias==NULL)   
+   {cout << "\n\n\n\rNo existe el archivo !!!";
+    cout << "\n\r<<< Oprima cualquier tecla para continuar >>>";
+	getch();
+	return;
+   } 
+
+   cout << "\n\r Codigo       Nombre     CI      Correo          Telefono ";
+   cout << "\n\r-----------------------------------------------------------------------"<<endl;
+   fread(&usuario,sizeof(usuario),1,alias);
+
+   // Lee el "ususario", de tamano=sizeof(usuario) del archivo "alias"
+   while(!feof(alias)) // Ciclo mientras no se encuentre el final del archivo   
+   {if(usuario.estado==9)
+   {
+     cout <<"\n"<<usuario.nombre<<"\t"<<usuario.CI<<"\t"<<usuario.correo<<"\t"<<usuario.tel<<endl;
+   }
+    fread(&usuario,sizeof(usuario),1,alias);
+   }   
+   fclose(alias); // Cierra el archivo   
+   cout << "\n\r-----------------------------------------------------------------------";
+   cout << "\n\rFin del listado !!!";
+   cout << "\n\r<<< Oprima cualquier tecla para continuar >>>";
+   getch();
+   return;
+ }
