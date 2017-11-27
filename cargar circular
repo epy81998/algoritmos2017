@@ -1,0 +1,20 @@
+void cargarcircular(int mat[fil][COL],int n)n-i-k+1
+{int i,j,h,k,l;
+for(i=0;i<n/2;i++)
+{for(j=i;j<n-a;j++)
+  cout<<"ingrese el valor en la fila "<<i+1<<" y en la columna "<<j+1<<": ";
+cin>>mat[i][j];
+ for(k=i+1;k<n-i;k++)
+	 cout<<"ingrese el valor de la fila"<<k+1<<" y en la columna "<<n-i<<": ";
+ cin>>mat[k][n-i-1];
+ for(h=i+1;h<n-i;h++)
+	  cout<<"ingrese el valor de la fila"<<n-i<<" y en la columna "<<n-i-k+1<<": ";
+ cin>>mat[n-i-1][n-i-k];
+ for(l=i+1;l<n-i;l++)
+	  cout<<"ingrese el valor de la fila"<<n-l-i+1<<" y en la columna "<<i<<": ";
+ cin>>mat[n-l-i][i];
+}
+
+
+
+}
