@@ -1,0 +1,32 @@
+void ModificarEmpleado()
+{
+	EmpleadoAfiliado reg;
+	int id = LeerEntero("Id buscado:");
+	FILE *alias;
+	alias = fopen("EmpleadoAfiliado.dat","rb+");
+	if(alias == NULL)
+	{
+		cout<<"error, archivo no encontrado"<<endl;
+	}
+	else
+	{
+		EncabezadoEmpleado();
+		fread(&reg,sizeof(reg),1,alias);
+		while(!feof(alias))
+		{
+			if(reg.estado != 9)
+			{
+				if(reg.id == id)
+				{
+					cout<<"Ingresar nuevos datos"<<endl;
+					LeerEmpleado(reg);
+					fseek(alias,sizeof(reg) * (-1),SEEK_CUR);
+					fwrite(&reg,sizeof(reg),1,alias);
+					break;
+				}
+			}
+			fread(&reg,sizeof(reg),1,alias);
+		}
+		fclose(alias);
+	}
+}
