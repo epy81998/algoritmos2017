@@ -1,0 +1,9 @@
+void traspuesta(int mat[fil][COL],int n)
+{int i,j,aux,h,k;
+ for(i=0;i<n;i++)
+ for(j=0;j<n;j++)
+ {aux=mat[i][j];
+ mat[i][j]=mat[j][i];
+ mat[j][i]=aux;
+ }
+ 
